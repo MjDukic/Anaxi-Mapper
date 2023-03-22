@@ -9,7 +9,7 @@ import { userAtom, MapperUser } from "../state";
 export default function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: "",
+    userName: "",
     email: "",
     password: "",
   });
@@ -28,8 +28,10 @@ export default function Signup() {
       console.log(formData);
       const { data } = await axios.post("/api/user", formData);
       console.log("DATA FROM BACKEND", data);
+      localStorage.setItem("userId", data.userId);
+      console.log(data.userId);
 
-      // got token, what do?
+      // got token, what do?s
 
       //store token in local storage;
       token.login(data.token);
@@ -56,18 +58,18 @@ export default function Signup() {
             <h2>REGISTER: </h2>
           </div>
           <label htmlFor="username-input-signup" className="form-label">
-            name:
+            Username:
           </label>
           <input
             onChange={handleFormChange}
-            name="name"
+            name="userName"
             type="text"
             id="username-input-signup"
             className="form-control rounded-lg"
           />
           <div className="">
             <label htmlFor="username-input-signup" className="form-label">
-              email:
+              Email:
             </label>
             <input
               onChange={handleFormChange}
@@ -79,12 +81,12 @@ export default function Signup() {
           </div>
           <div>
             <label htmlFor="password-input-signup" className="form-label ">
-              password:
+              Password:
             </label>
             <input
               onChange={handleFormChange}
               name="password"
-              type="password"
+              type="text"
               id="password-input-signup"
               className="form-control rounded-lg w-3/5"
             />
