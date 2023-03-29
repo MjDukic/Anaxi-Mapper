@@ -26,13 +26,19 @@ export default function HomePage() {
       <div className="h-60vh w-screen opacity-40 bg-red-50 absolute"></div>
       <div className="about h-60vh w-screen grid grid-cols-6 divide-x divide-sky-800 text-sky-800 content-center italic font-fuzzy-bubbles ">
         <div className="text-2xl text-right pt-4 px-10 z-10">About</div>
-        <div className="text-xl text-left col-span-4 px-12 z-10 py-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque in
-          reprehenderit, natus impedit eum libero similique voluptatem. Saepe
-          quia assumenda porro excepturi, quaerat repellat repellendus quisquam
-          adipisci veniam culpa beatae explicabo totam facilis facere quos
-          quidem nulla, inventore laborum ipsa repudiandae eos omnis? Placeat ex
-          tempora eos quas culpa officia?
+        <div className="col-span-4 w-full h-full bg-white bg-opacity-70 flex items-center justify-center rounded-2xl shadow-xl shadow-zinc-900">
+          <div className="text-l text-left col-span-4 px-12 z-10 py-2">
+            Anaxi exists to provide the ultimate map experience, designed with
+            features such as 3d rendered overlay and data visualizations. The
+            primary functionality revolves around location based searches, which
+            will let you find the best places to eat, drink, and shop in any
+            area. To start, simply enter a location you would like to explore,
+            and from there, you can enter more parameters to find the places of
+            interest you are looking for in your area. Our application features
+            route visualization and 3d model imports for a more enjoyable and
+            immersive user experience, with further visualization features like
+            animations and arc layer mapping to come in future releases!
+          </div>
         </div>
       </div>
       <div className="h-60vh w-screen opacity-90 bg-slate-900 absolute"></div>
@@ -46,7 +52,7 @@ export default function HomePage() {
             <span className="font-medium font-righteous">Lead Developer</span>
             <br />
             <div className="text-sm font-normal w-40">Fullstack Developer,</div>
-            <div className="text-sm w-40 font-normal">B.S. in Biochemistry</div>
+            <div className="text-sm w-40 font-normal">B.S. - Biochemistry</div>
           </div>
           <div className="flex justify-around">
             <a
@@ -79,11 +85,11 @@ export default function HomePage() {
             <span className="font-righteous font-medium">Logan Senn</span>
             <br />
             <span className="font-medium font-righteous">
-              Co-Lead Developer
+              Co-Lead Dev.
             </span>
             <br />
             <div className="text-sm font-normal w-40">Fullstack Developer</div>
-            <div className="text-sm w-40 font-normal">B.B.A. in Finance</div>
+            <div className="text-sm w-40 font-normal">B.B.A. - Finance</div>
           </div>
           <div className="flex justify-around">
             <a
@@ -100,32 +106,44 @@ export default function HomePage() {
             >
               <i className="fa-brands fa-linkedin"></i>
             </a>
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a href="https://main--lambent-sopapillas-e0299b.netlify.app/" className="text-amber-50 text-3xl" target="_blank">
               <i className="fa-solid fa-file"></i>
             </a>
           </div>
         </div>
-        {/* empty promo card */}
+        {/* mirjanas promo card */}
         <div className="z-10 text-xl font-fuzzy-bubbles">
           <div className="mirjana h-40 w-40 border-2 border-amber-50 rounded-full" />
           <div className="text-center font-bold text-amber-50 italic">
-            <span className="font-righteous font-medium">Hannah Kim</span>
+            <span className="font-righteous font-medium">Mirjana Dukic</span>
             <br />
             <span className="font-medium font-righteous w-40">
               Software Dev.
             </span>
             <br />
-            <div className="text-sm font-normal w-40"></div>
-            <div className="text-sm w-40 font-normal"></div>
+            <div className="text-sm font-normal w-40">Fullstack Developer </div>
+            <div className="text-sm w-40 font-normal">B.A - Psychology</div>
           </div>
           <div className="flex justify-around">
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a
+              href="https://github.com/MjDukic?tab=repositories"
+              className="text-amber-50 text-3xl"
+              target="_blank"
+            >
               <i className="fa-brands fa-github"></i>
             </a>
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/mirjanadukic/"
+              className="text-amber-50 text-3xl"
+              target="_blank"
+            >
               <i className="fa-brands fa-linkedin"></i>
             </a>
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a
+              href="https://mirjanadukicportfolio.netlify.app"
+              className="text-amber-50 text-3xl"
+              target="_blank"
+            >
               <i className="fa-solid fa-file"></i>
             </a>
           </div>
@@ -134,25 +152,36 @@ export default function HomePage() {
         <div className="z-10 text-xl font-fuzzy-bubbles">
           <div className="hannah h-40 w-40 border-2 border-amber-50 rounded-full" />
           <div className="text-center font-bold text-amber-50 italic">
-            <span className="font-righteous font-medium">Mirjana Dukic</span>
+            <span className="font-righteous font-medium">Hannah Kim</span>
             <br />
             <span className="font-medium font-righteous w-40">
               Software Dev.
             </span>
             <br />
-            <div className="text-sm font-normal w-40">
-              <title></title>
-            </div>
+            <div className="text-sm font-normal w-40">Fullstack Developer </div>
+            <div className="text-sm w-40 font-normal">B.F.A - Graphic Design</div>
             <div className="text-sm w-40 font-normal"></div>
           </div>
           <div className="flex justify-around">
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a
+              href="https://github.com/hannahsykim"
+              className="text-amber-50 text-3xl"
+              target="_blank"
+            >
               <i className="fa-brands fa-github"></i>
             </a>
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/kimhannah1/"
+              className="text-amber-50 text-3xl"
+              target="_blank"
+            >
               <i className="fa-brands fa-linkedin"></i>
             </a>
-            <a href="" className="text-amber-50 text-3xl" target="_blank">
+            <a
+              href="https://portfolio-hannahkim.netlify.app/"
+              className="text-amber-50 text-3xl"
+              target="_blank"
+            >
               <i className="fa-solid fa-file"></i>
             </a>
           </div>

@@ -23,7 +23,7 @@ import {
   loadingAtom,
   mapStyleAtom,
   mapReloadAtom,
-  encodedPolylineAtom
+  encodedPolylineAtom,
 } from "../../state";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import { GoogleMapsOverlay } from "@deck.gl/google-maps";
@@ -62,7 +62,7 @@ export default function Mapper() {
     mapId: mapStyleValue === "full" ? "605e131c3939f175" : "f5d27befd916db8c",
     center: coordValue || { lat: 34.0729297, lng: -118.4401635 },
     // zoom based on secondary search radius
-    zoom: 19,
+    zoom: 18,
     disableDefaultUI: true,
     heading: 15,
     tilt: 55,
@@ -91,7 +91,7 @@ function MyMap() {
   // const loadValue = useAtomValue(loadingAtom);
   // const setLoadValue = useSetAtom(loadingAtom);
   const [loadValue, setLoadValue] = useState(false);
-  encodedPolylineValue = useAtomValue(encodedPolylineAtom)
+  encodedPolylineValue = useAtomValue(encodedPolylineAtom);
 
   // mapOptions.center = coordValue
 
@@ -113,6 +113,8 @@ function MyMap() {
     }
   }, [coordValue]);
 
+  // reload map function
+
   // useEffect(() => {
 
   // }, [encodedPolylineValue]);
@@ -120,8 +122,8 @@ function MyMap() {
   // MARKERS BELOW
 
   nearbyPlacesArray.forEach((location) => {
-    const tagsArray = location.types.map((tag) => tag.replaceAll("_", " "))
-    const tags = tagsArray.toString().replaceAll(",", ", ")
+    const tagsArray = location.types.map((tag) => tag.replaceAll("_", " "));
+    const tags = tagsArray.toString().replaceAll(",", ", ");
     // needs more research, styling not fully functional
     // onclick="handleSetDestinationIDValue(${location.place_id}, ${setDestinationIDValue})"
     const contentString = `<div class="font-fuzzy-bubbles">
@@ -188,24 +190,32 @@ function MyMap() {
 }
 
 function moveToLocation(lat: number, lng: number) {
+  console.log("move to location called");
   const center = new google.maps.LatLng(lat, lng);
   // using global variable:
-  instance?.panTo(center);
+  // instance?.setZoom(5);
+  try {
+    console.log("trying to pan to");
+    console.log(instance, "instance");
+    instance?.panTo(center);
+  } catch (error) {
+    console.log("panTo Failed", error);
+  }
 }
 
 let overlay: unknown;
 
 function createOverlay(map) {
-  const data = [{path: [], timestamps: []}];
+  const data = [{ path: [], timestamps: [] }];
 
   const decodedPolyline = polyline.toGeoJSON(encodedPolylineValue);
   // console.log(decodedPolyline);
 
   for (let i = 0; i < decodedPolyline.coordinates.length; i++) {
     data[0].path.push(decodedPolyline.coordinates[i]);
-    data[0].timestamps.push((i * 8))
+    data[0].timestamps.push(i * 8);
   }
-    
+
   // console.log(DATA_URL)
   console.log(data, "data");
 
@@ -244,7 +254,7 @@ function createOverlay(map) {
   //   currentTime,
   // };
 
-// console.log(pathData)
+  // console.log(pathData)
   // const props = {
   //   id: "trips",
   //   data: pathData,
@@ -340,7 +350,7 @@ function createOverlay(map) {
           zoom: mapOptions.zoom,
         });
 
-        if (mapOptions.zoom > 18.5) {
+        if (mapOptions.zoom > 17) {
           mapOptions.zoom -= 0.01;
           mapOptions.heading += 0.04;
         } else {
