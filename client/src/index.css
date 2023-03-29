@@ -9,7 +9,44 @@ body {
   background-color: rgb(244, 242, 237);
 }
 
+.hero {
+  background-image: url('./assets/bg-hero.gif');
+  background-size: cover;
+}
 
+.about {
+  background-image: url('./assets/garrett-butler-eo3cppZxxCA-unsplash.jpg');
+  background-size: cover;
+}
+
+.promo {
+  background-image: url('./assets/brett-zeck-eyfMgGvo9PA-unsplash.jpg');
+  background-size: cover;
+}
+
+.brandon {
+  background-image: url('./assets/pfp-brandon.jpg');
+  background-size: cover;
+}
+
+.logan {
+  background-image: url('./assets/Logan.jpg');
+  background-size: cover;
+}
+
+.mirjana {
+  background-image: url('./assets/brett-zeck-eyfMgGvo9PA-unsplash.jpg');
+  background-size: cover;
+}
+
+.hannah {
+  background-image: url('./assets/brett-zeck-eyfMgGvo9PA-unsplash.jpg');
+  background-size: cover;
+}
+
+.h-60vh {
+  height: 60vh;
+}
 
 .directions {
   position: absolute;
@@ -22,7 +59,7 @@ body {
 
 #map {
   width: 100%;
-  height: 70vh;
+  height: 75vh;
 }
 
 .marker {
